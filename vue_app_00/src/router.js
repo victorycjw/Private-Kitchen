@@ -8,6 +8,8 @@ import Index from "./components/Private-Kitchen/Index.vue"
 import Login from "./components/Private-Kitchen/Login.vue"
 import Register from "./components/Private-Kitchen/Register.vue"
 import Carousel from "./components/Private-Kitchen/Carousel.vue"
+import Titlelar from "./components/Private-Kitchen/Titlelar.vue"
+import Tabcarousel from "./components/Private-Kitchen/Tabcarousel.vue"
 
 
 Vue.use(Router)
@@ -18,5 +20,7 @@ export default new Router({
     {path:'/Login',component:Login},
     {path:'/Register',component:Register},
     {path:'/Carousel',component:Carousel},
+    {path:'/Titlelar',component:Titlelar},
+    {path:'/Tabcarousel',component:Tabcarousel},
   ]
 })

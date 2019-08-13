@@ -7,19 +7,22 @@
                 <titlelar></titlelar>
                 <!-- 轮播图 -->
                 <carousel></carousel>
+                <!-- Tab -->
+                <tabcarousel></tabcarousel>
                 <!-- 导航 -->
-                <navtitle></navtitle>
+                <!-- <navtitle></navtitle> -->
                 <!-- 推荐好物 -->
             </mt-tab-container-item>
+            <!-- 第二页面 -->
+            <mt-tab-container-item id="menu">
+            </mt-tab-container-item>
             <!--分类 -->
-            <mt-tab-container-item id="sort">
+            <mt-tab-container-item id="add">
             </mt-tab-container-item>
             <!-- 第三页面 -->
-            <mt-tab-container-item id="seacher">
-                 
+            <mt-tab-container-item id="cart">
             </mt-tab-container-item>
-            <mt-tab-container-item id="shop">
-            </mt-tab-container-item>
+            <!-- 第四页面 -->
             <mt-tab-container-item id="me">
             </mt-tab-container-item>
         </mt-tab-container>
@@ -53,6 +56,11 @@
 import titlelar from "./Titlelar.vue"
 // 轮播图
 import carousel from "./Carousel.vue"
+// Tab选项卡
+import tabcarousel from "./Tabcarousel.vue"
+// Nav
+// import navtitle from "./Navtitle.vue"
+
 // 底部导航栏
 // import bottomBar from "./bottom.vue";
 // 首页主体内容
@@ -61,14 +69,14 @@ import carousel from "./Carousel.vue"
 // import navtitle from "./navf.vue";
 // 推荐页面
 // import recomm from "./body.vue";
-// 登陆页面
-import login from "./Login.vue";
 // 购物车
 // import shopping from "./shoppchart.vue"
 // 第三个荣耀专场
 // import honor from "./3honor.vue"
 // 第二分类也
 // import sortall from "./sele_page"
+// 登陆页面
+import login from "./Login.vue";
 export default {
     data(){
         return{
@@ -86,9 +94,10 @@ export default {
         "login":login,
         "titlelar":titlelar,
         "carousel":carousel,
+        "tabcarousel":tabcarousel,
+        // "navtitle":navtitle,
         // "bottombar":bottomBar,
         // "proinner":proinner,
-        // "navtitle":navtitle,
         // "recomm":recomm,
         // "shopping":shopping,
         // "honor":honor,

@@ -12,14 +12,12 @@
         <mt-tab-container v-model="active">
             <mt-tab-container-item id="recommend">
                 <!-- 美食推荐 -->
-                <selepage></selepage>
             </mt-tab-container-item>
             <mt-tab-container-item id="attention">
                 <!-- 首页关注人 -->
             </mt-tab-container-item>
             <mt-tab-container-item id="community">
                 <!-- 美食社区 -->
-                <honor></honor>
             </mt-tab-container-item>
             <mt-tab-container-item id="skill">
                 <!-- 厨房技巧 -->
@@ -35,9 +33,9 @@
 </template>
 <script>
 // 第二个华为专场界面
-import selepage from "./second_phone.vue"
+// import selepage from "./second_phone.vue"
 // 第三荣耀专区
-import honor from "./3honor.vue"
+// import honor from "./3honor.vue"
 export default {
     data(){
         return{active:"attention"}
@@ -45,14 +43,14 @@ export default {
      methods:{
     },
     components:{
-        "selepage":selepage,
-        "honor":honor
+        // "selepage":selepage,
+        // "honor":honor
     }
 }
 </script>
 <style scoped>
 .mint-navbar{
-    margin-top:40px;
+    margin-top:180px;
 }
 .mint-navbar .mint-tab-item.is-selected {
     border-bottom: 3px solid #f00;

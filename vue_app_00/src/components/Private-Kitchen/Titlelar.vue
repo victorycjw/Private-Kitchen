@@ -1,7 +1,7 @@
 <template>
     <div>
-        <!-- 父组件 -->
-    <titlelar :login_pic="require('../../img/menu (1).svg')" :cart_pic="require('../../img/menu (2).svg')" :search="require('../../img/menu (2).svg')" :login="login" :cart="cart">
+    <!-- 父组件 -->
+    <titlelar :login_pic="require('../../img/notlogin.png')" :cart_pic="require('../../img/cart.png')" :login="login" :cart="cart">
     </titlelar>
     </div>
 </template>
@@ -14,10 +14,10 @@ export default {
     },
     methods: {
         login(){
-            
+            this.$router.push("/Login");
         },
         cart(){
-            
+            this.$router.push("/Cart");
         },  
     },
     components:{

@@ -20,7 +20,6 @@ export default {
     },
     methods: {
         handleChange(){
-            console.log(1)
         }
     },
 }
@@ -41,12 +40,12 @@ export default {
 .mint-swipe {
     position: relative;
     height: 140px;
-    margin-top:95px;
+    margin-top:40px;
 }
 .mint-swipe-items-wrap .mint-swipe-item{
     background-repeat:no-repeat;
     background-size:100% 140px;  
-    border-radius: 8px;
+    border-radius: 15px;
 }
 .mint-swipe-items-wrap .mint-swipe-item:first-child {
     background-image: url('../../img/carousel/Rotary-Planting-Map-1.jpg');

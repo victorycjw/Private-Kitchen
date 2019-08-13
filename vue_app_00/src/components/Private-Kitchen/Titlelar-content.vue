@@ -13,20 +13,16 @@
         </div>
     </div> -->
     <div class="title_head">
-        <div>
-            <div @click="login" class="left_pic">
-                <img :src="login_pic" alt="">
-            </div>
-            <div>
-                <img :src="search" alt="">
-                <input type="search">
-            </div>
-            <div @click="cart" class="right_pic">
-                <img :src="cart_pic" alt="">
-            </div>
+        <div @click="login" class="left_pic">
+            <img :src="login_pic" alt="">
         </div>
-        <div></div>
-        <div></div>
+        <div class="searchkuang">
+            <input type="search" :placeholder="placeholder">
+            
+        </div>
+        <div @click="cart" class="right_pic">
+            <img :src="cart_pic" alt="">
+        </div>
     </div>
 </template>
 <script>
@@ -36,6 +32,7 @@ export default {
         login_pic:{default:""},
         cart_pic:{default:""},
         search:{default:""},
+        placeholder:`<img src="../../img/search.png" alt="">`,
         login:{type:Function},
         cart:{type:Function},
     },
@@ -60,18 +57,22 @@ export default {
     /* margin-left:10px; */
     border-bottom:1px solid #ddd;
 }
-.right-title{
+.searchkuang{
     display: flex;
-    margin-right:20px;
-    border:1px solid gray;
-    border-radius: 12px;    
 }
-.left-pic,.right-pic,.shu{
+.left_pic{
+    width: 24px;
+    height: 24px;
     display: flex;
-    align-items: center;
-    margin:0 5px;
+    /* border:1px solid gray; */
+    border-radius: 50%; 
 }
-/* .shu{
-    padding-right:2px;
-} */
+.right_pic{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    margin-right:10px;
+    /* border:1px solid gray; */
+    border-radius: 50%;    
+}
 </style>
