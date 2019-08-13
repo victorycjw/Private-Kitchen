@@ -38,6 +38,8 @@
          var u = this.uname;
          var p = this.upwd;
          var ap = this.aupwd;
+         var phone=this.phone;
+         var verify=this.verify;
          //2:创建一个正则表达式
          //  字母数字下划3~12
   var reg = /^[a-z0-9_-]{3,12}$/i;
