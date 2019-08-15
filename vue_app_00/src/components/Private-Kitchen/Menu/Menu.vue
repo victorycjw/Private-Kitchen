@@ -1,13 +1,13 @@
 <template>
     <div>
         <menutop></menutop>
-        <menumiddle></menumiddle>
+        <!-- <menumiddle></menumiddle> -->
     </div>
 </template>
 
 <script>
     // 头部搜索
-    import titlelar from './Search.vue'
+    import menutop from './Search.vue'
     // 
     export default {
         data(){
@@ -17,7 +17,7 @@
         },
         components:{
             "menutop":menutop,
-            "menumiddle":menumiddle
+            // "menumiddle":menumiddle
         }
     }
 </script>
