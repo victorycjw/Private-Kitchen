@@ -10,9 +10,8 @@ import Register from "./components/Private-Kitchen/Register.vue"
 import Carousel from "./components/Private-Kitchen/Carousel.vue"
 import Titlelar from "./components/Private-Kitchen/Titlelar.vue"
 import Tabcarousel from "./components/Private-Kitchen/Tabcarousel.vue"
-import Search from "./components/Private-Kitchen/Menu/Search.vue"
 import Sidebartab from "./components/Private-Kitchen/Menu/Sidebartab.vue"
-import Menu from "./components/Private-Kitchen/Menu/Menu.vue"
+import Button from "./components/Private-Kitchen/Button.vue"
 
 
 Vue.use(Router)
@@ -25,8 +24,7 @@ export default new Router({
     {path:'/Carousel',component:Carousel},
     {path:'/Titlelar',component:Titlelar},
     {path:'/Tabcarousel',component:Tabcarousel},
-    {path:'/Search',component:Search},
     {path:'/Sidebartab',component:Sidebartab},
-    {path:'/Menu',component:Menu}
+    {path:'/Button',component:Button},
   ]
 })

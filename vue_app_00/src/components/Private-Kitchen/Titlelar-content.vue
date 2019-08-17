@@ -16,9 +16,8 @@
         <div @click="login" class="left_pic">
             <img :src="login_pic" alt="">
         </div>
-        <div class="searchkuang">
-            <input type="search" :placeholder="placeholder">
-            
+        <div class="page-search">
+            <mt-search autofocus v-model="value"></mt-search>
         </div>
         <div @click="cart" class="right_pic">
             <img :src="cart_pic" alt="">
@@ -31,13 +30,15 @@ export default {
         //声明接收元素数据
         login_pic:{default:""},
         cart_pic:{default:""},
-        search:{default:""},
         placeholder:`<img src="../../img/search.png" alt="">`,
         login:{type:Function},
         cart:{type:Function},
     },
+    name: 'page-search',
     data(){
-        return{}
+        return{
+            value:''
+        }
     }
 }
 </script>
@@ -50,20 +51,30 @@ export default {
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    height:40px;
+    height:50px;
     color:#000;
     font-size:18px;
-    padding-left:10px;
+    /* padding-left:10px; */
     /* margin-left:10px; */
     border-bottom:1px solid #ddd;
 }
-.searchkuang{
-    display: flex;
+
+/* 搜索框 */
+.page-search{
+    width: 95%;
+    height: 50px;
+    background-color: #fff;
 }
+.mint-search{
+    height: 50px;
+}
+.mint-searchbar-core{
+    padding-left: 30px;
+}
+
 .left_pic{
     width: 24px;
     height: 24px;
-    display: flex;
     /* border:1px solid gray; */
     border-radius: 50%; 
 }

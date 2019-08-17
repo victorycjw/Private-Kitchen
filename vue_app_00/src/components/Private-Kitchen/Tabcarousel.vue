@@ -1,7 +1,7 @@
 <template>
     <div>
         <mt-navbar v-model="active" fixed>
-            <mt-tab-item id="recommend" >推荐</mt-tab-item>
+            <mt-tab-item id="recommend">推荐</mt-tab-item>
             <mt-tab-item id="attention">关注</mt-tab-item>
             <mt-tab-item id="community">美食社区</mt-tab-item>
             <mt-tab-item id="skill">厨房技巧</mt-tab-item>
@@ -50,11 +50,14 @@ export default {
 </script>
 <style scoped>
 .mint-navbar{
-    margin-top:180px;
+    margin-top:300px;
 }
 .mint-navbar .mint-tab-item.is-selected {
     border-bottom: 3px solid #f00;
     color: #f00;
     margin-bottom: -3px;
+}
+.mint-tab-item-label{
+    font-size:20px;
 }
 </style>

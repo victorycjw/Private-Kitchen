@@ -40,7 +40,7 @@ export default {
 .mint-swipe {
     position: relative;
     height: 140px;
-    margin-top:40px;
+    margin-top:50px;
 }
 .mint-swipe-items-wrap .mint-swipe-item{
     background-repeat:no-repeat;

@@ -7,10 +7,10 @@
                 <titlelar></titlelar>
                 <!-- 轮播图 -->
                 <carousel></carousel>
+                <!-- 分类按钮 -->
+                <Button></Button>
                 <!-- Tab -->
                 <tabcarousel></tabcarousel>
-                <!-- 导航 -->
-                <!-- <navtitle></navtitle> -->
                 <!-- 推荐好物 -->
             </mt-tab-container-item>
             <!-- 第二页面 -->
@@ -58,6 +58,8 @@ import titlelar from "./Titlelar.vue"
 import carousel from "./Carousel.vue"
 // Tab选项卡
 import tabcarousel from "./Tabcarousel.vue"
+// 分类按钮
+import Button from "./Button.vue"
 // Nav
 // import navtitle from "./Navtitle.vue"
 
@@ -95,6 +97,7 @@ export default {
         "titlelar":titlelar,
         "carousel":carousel,
         "tabcarousel":tabcarousel,
+        "Button":Button,
         // "navtitle":navtitle,
         // "bottombar":bottomBar,
         // "proinner":proinner,
