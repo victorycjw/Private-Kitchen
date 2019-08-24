@@ -8,10 +8,11 @@ import Index from "./components/Private-Kitchen/Index.vue"
 import Login from "./components/Private-Kitchen/Login.vue"
 import Register from "./components/Private-Kitchen/Register.vue"
 import Carousel from "./components/Private-Kitchen/Carousel.vue"
-import Titlelar from "./components/Private-Kitchen/Titlelar.vue"
+import Titlebar from "./components/Private-Kitchen/Titlebar.vue"
 import Tabcarousel from "./components/Private-Kitchen/Tabcarousel.vue"
 import Sidebartab from "./components/Private-Kitchen/Menu/Sidebartab.vue"
 import Button from "./components/Private-Kitchen/Button.vue"
+import Recommend from "./components/Private-Kitchen/Recommend.vue"
 
 
 Vue.use(Router)
@@ -22,9 +23,10 @@ export default new Router({
     {path:'/Login',component:Login},
     {path:'/Register',component:Register},
     {path:'/Carousel',component:Carousel},
-    {path:'/Titlelar',component:Titlelar},
+    {path:'/Titlebar',component:Titlebar},
     {path:'/Tabcarousel',component:Tabcarousel},
     {path:'/Sidebartab',component:Sidebartab},
     {path:'/Button',component:Button},
+    {path:'/Recommend',component:Recommend},
   ]
 })

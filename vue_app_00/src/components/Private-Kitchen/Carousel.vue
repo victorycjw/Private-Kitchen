@@ -40,12 +40,12 @@ export default {
 .mint-swipe {
     position: relative;
     height: 140px;
-    margin-top:50px;
+    margin-top: 60px;
 }
 .mint-swipe-items-wrap .mint-swipe-item{
     background-repeat:no-repeat;
     background-size:100% 140px;  
-    border-radius: 15px;
+    border-radius: 5px;
 }
 .mint-swipe-items-wrap .mint-swipe-item:first-child {
     background-image: url('../../img/carousel/Rotary-Planting-Map-1.jpg');

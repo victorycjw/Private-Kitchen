@@ -9,7 +9,6 @@
      padding-bottom:0px;
      overflow-x:hidden;
    }
-
  .mui-bar-tab .mui-tab-item-tao.mui-active {
     color: #007aff;
  }
@@ -37,6 +36,13 @@
    display:block;
    overflow:hidden;
    text-overflow:ellipsis;
-
+}
+div.van-tab{
+   font-family: sans-serif;
+   font-size: 16px;
+   color: black;
+}
+div.van-tab--active {
+   color: red;
 }
 </style>

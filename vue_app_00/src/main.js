@@ -16,6 +16,11 @@ import axios from "./axios"
 import Vuex from "vuex"
 //7: 注册vuex组件
 Vue.use(Vuex)
+
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
+
 //8: 创建vuex实例 store 
 var store = new Vuex.Store({
   //vuex中全局共享数据

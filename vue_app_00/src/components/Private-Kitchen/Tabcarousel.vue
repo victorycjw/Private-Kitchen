@@ -1,63 +1,52 @@
 <template>
-    <div>
-        <mt-navbar v-model="active" fixed>
-            <mt-tab-item id="recommend">推荐</mt-tab-item>
-            <mt-tab-item id="attention">关注</mt-tab-item>
-            <mt-tab-item id="community">美食社区</mt-tab-item>
-            <mt-tab-item id="skill">厨房技巧</mt-tab-item>
-            <mt-tab-item id="bake">烘焙</mt-tab-item>
-            <mt-tab-item id="foodcity">美食圈</mt-tab-item>
-        </mt-navbar>
-        <!-- 面板 -->
-        <mt-tab-container v-model="active">
-            <mt-tab-container-item id="recommend">
-                <!-- 美食推荐 -->
-            </mt-tab-container-item>
-            <mt-tab-container-item id="attention">
-                <!-- 首页关注人 -->
-            </mt-tab-container-item>
-            <mt-tab-container-item id="community">
-                <!-- 美食社区 -->
-            </mt-tab-container-item>
-            <mt-tab-container-item id="skill">
-                <!-- 厨房技巧 -->
-            </mt-tab-container-item>
-            <mt-tab-container-item id="bake">
-                <!-- 烘焙 -->
-            </mt-tab-container-item>
-            <mt-tab-container-item id="foodcity">
-                <!-- 美食圈 -->
-            </mt-tab-container-item>
-        </mt-tab-container>
-    </div>
+    <van-tabs v-model="active" swipeable>
+        <van-tab :title="'推荐'">
+            <!-- 推荐 -->
+            <recommend></recommend>
+        </van-tab>
+        <van-tab :title="'关注'">
+            <!-- 关注 -->
+            <attention></attention>
+        </van-tab>
+        <van-tab :title="'美食社区'">
+            <!-- 美食社区 -->
+            <community></community>
+        </van-tab>
+        <van-tab :title="'厨房技巧'">
+            <!-- 厨房技巧 -->
+            <skill></skill>
+        </van-tab>
+        <van-tab :title="'烘焙'">
+            <!-- 烘焙 -->
+            <bakery></bakery>
+        </van-tab>
+        <van-tab :title="'美食圈'">
+            <!-- 美食圈 -->
+            <foodcity></foodcity>
+        </van-tab>
+    </van-tabs>
 </template>
 <script>
-// 第二个华为专场界面
-// import selepage from "./second_phone.vue"
-// 第三荣耀专区
-// import honor from "./3honor.vue"
-export default {
-    data(){
-        return{active:"attention"}
-    },
-     methods:{
-    },
-    components:{
-        // "selepage":selepage,
-        // "honor":honor
-    }
+import recommend from "./Recommend.vue"
+import attention from "./Attention.vue"
+import community from "./Community.vue"
+import skill from "./Skill.vue"
+import bakery from "./Bakery.vue"
+import foodcity from "./Foodcity.vue"
+    export default {
+        data(){
+            return{active:"recommend"}
+        },
+        components:{
+            "recommend":recommend,
+            "attention":attention,
+            "community":community,
+            "skill":skill,
+            "bakery":bakery,
+            "foodcity":foodcity,
+        },
 }
 </script>
 <style scoped>
-.mint-navbar{
-    margin-top:300px;
-}
-.mint-navbar .mint-tab-item.is-selected {
-    border-bottom: 3px solid #f00;
-    color: #f00;
-    margin-bottom: -3px;
-}
-.mint-tab-item-label{
-    font-size:20px;
-}
+
 </style>
