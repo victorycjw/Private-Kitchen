@@ -21,7 +21,7 @@ export default {
         },
         cart(){
             this.$router.push("/Cart");
-        },  
+        },
     },
 }
 </script>

@@ -60,7 +60,7 @@
                 this.$router.push("/Meals")
             },
             Cart(){
-                this.$router.push("/Cart")
+                this.$router.push("/CartShop")
             },
             HomeDishes(){
                 this.$router.push("/HomeDishes")

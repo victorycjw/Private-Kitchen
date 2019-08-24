@@ -7,7 +7,7 @@
       <!--密码-->
       <mt-field :placeholder="upwdHolder" v-model="upwd" class="myinput" type="password"></mt-field>
       <!--登录按钮-->
-      <mt-button size="large" class="mybutton" @click="login">登录</mt-button>
+      <mt-button size="large" class="mybutton" @click.native="login">登录</mt-button>
     </div>  
   </template>
   <script>
@@ -42,14 +42,21 @@
      var url = "login";
      var obj = {uname:u,upwd:p};
      this.axios.get(url,{params:obj}).then(
-       result=>{
+       res=>{
        //1:判断服务器返回结果
        //2:code:>0 跳转Home1组件
-       if(result.data.code > 0){
-          this.$router.push("/Home1");
-       }else{
-          this.$messagebox("提示","用户名或密码有误");
-       }
+       if(res.data.data==-1){
+          this.$toast("用户名和密码有误");            
+          //登录失败  提示
+        }else{
+          //登录成功  跳转商品首页
+          this.$router.push("/CartShop");
+        }
+      //  if(result.data.code > 0){
+      //     this.$router.push("/");
+      //  }else{
+      //     this.$messagebox("提示","用户名或密码有误");
+      //  }
      });
      }
      }

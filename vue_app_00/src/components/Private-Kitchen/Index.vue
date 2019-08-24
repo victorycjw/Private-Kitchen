@@ -22,6 +22,7 @@
             </mt-tab-container-item>
             <!-- 第三页面 -->
             <mt-tab-container-item id="cart">
+                <cart></cart>
             </mt-tab-container-item>
             <!-- 第四页面 -->
             <mt-tab-container-item id="me">
@@ -33,14 +34,14 @@
                <bottombar :selImg="require('../../img/f3.svg')" :noImg="require('../../img/f.svg')" :focused="currentIndex[0].isSelect"></bottombar>  
                 首页
             </mt-tab-item >
-            <mt-tab-item id="sort" @click.native="change(1)">
+            <mt-tab-item id="menu" @click.native="change(1)">
                  <bottombar :selImg="require('../../img/f3.svg')" :noImg="require('../../img/f.svg')" :focused="currentIndex[1].isSelect" ></bottombar>
                  菜谱
             </mt-tab-item>
-            <mt-tab-item id="seacher" @click.native="change(2)">
+            <mt-tab-item id="add" @click.native="change(2)">
                  <bottombar :selImg="require('../../img/+.svg')" :noImg="require('../../img/+.svg')" :focused="currentIndex[2].isSelect" ></bottombar>
             </mt-tab-item>
-            <mt-tab-item id="shop" @click.native="change(3)">
+            <mt-tab-item id="cart" @click.native="change(3)">
                  <bottombar :selImg="require('../../img/g2.svg')" :noImg="require('../../img/g.svg')" :focused="currentIndex[3].isSelect"></bottombar>
                  购物车
             </mt-tab-item>
@@ -62,6 +63,8 @@ import tabcarousel from "./Tabcarousel.vue"
 import Button from "./Button.vue"
 // 底部导航栏
 import bottombar from "./Bottombar.vue";
+import cart from "./Cart.vue";
+
 // Nav
 // import navtitle from "./Navtitle.vue"
 
@@ -99,6 +102,7 @@ export default {
         "tabcarousel":tabcarousel,
         "Button":Button,
         "bottombar":bottombar,
+        "cart":cart,
         // "navtitle":navtitle,
         // "proinner":proinner,
         // "recomm":recomm,

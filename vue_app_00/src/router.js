@@ -10,10 +10,10 @@ import Register from "./components/Private-Kitchen/Register.vue"
 import Carousel from "./components/Private-Kitchen/Carousel.vue"
 import Titlebar from "./components/Private-Kitchen/Titlebar.vue"
 import Tabcarousel from "./components/Private-Kitchen/Tabcarousel.vue"
-import Sidebartab from "./components/Private-Kitchen/Menu/Sidebartab.vue"
 import Button from "./components/Private-Kitchen/Button.vue"
 import Recommend from "./components/Private-Kitchen/Recommend.vue"
-
+import CartShop from "./components/Private-Kitchen/CartShop.vue"
+import Cart from "./components/Private-Kitchen/Cart.vue"
 
 Vue.use(Router)
 export default new Router({
@@ -25,8 +25,9 @@ export default new Router({
     {path:'/Carousel',component:Carousel},
     {path:'/Titlebar',component:Titlebar},
     {path:'/Tabcarousel',component:Tabcarousel},
-    {path:'/Sidebartab',component:Sidebartab},
     {path:'/Button',component:Button},
     {path:'/Recommend',component:Recommend},
+    {path:'/CartShop',component:CartShop},
+    {path:'/Cart',component:Cart},
   ]
 })
