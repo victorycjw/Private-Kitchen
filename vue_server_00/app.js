@@ -10,7 +10,7 @@ const session = require("express-session");
    user:"root",
    password:"",
    port:3306,
-   database:"xz",
+   database:"P_Kitchen",
    connectionLimit:15
  })
  //2.2:跨域
@@ -32,7 +32,6 @@ const session = require("express-session");
  server.listen(3000);
 
 
-
  //功能一:完成用户登录操作
 server.get("/login",(req,res)=>{
    //1:参数:获取网页传递两个数据 uname upwd
@@ -42,7 +41,7 @@ server.get("/login",(req,res)=>{
    var upwd = req.query.upwd;
    //2:sql:查询sql语句
    //数据库 库名 表名 列名 小写字母
-   var sql = "SELECT id FROM xz_login";
+   var sql = "SELECT id FROM pk_login";
    sql+=" WHERE uname = ? AND upwd=md5(?)";
    //3:json:{code:1,msg:"登录成功"}
    pool.query(sql,[uname,upwd],(err,result)=>{
@@ -66,7 +65,6 @@ server.get("/login",(req,res)=>{
 
 
 
-
 //功能二：分页查询商品列表（拿学子商城数据库做实验）
 //1.接收请求方式GET  请求地址 /product
 server.get("/product",(req,res)=>{
@@ -82,7 +80,7 @@ server.get("/product",(req,res)=>{
    ps=parseInt(ps);
   //6.创建sql语句
    var sql="SELECT lid,price,lname";
-   sql+=" ,img_url FROM xz_laptop";
+   sql+=" ,img_url FROM pk_product";
    sql+=" LIMIT ?,?";
   //7.通过连接池发送sql语句
    pool.query(sql,[offset,ps],(err,result)=>{
@@ -92,12 +90,6 @@ server.get("/product",(req,res)=>{
     res.send({code:1,msg:"查询成功",data:result});
    });
   })
-
-
-
-
-
-
 
 
 //功能三：将指定的商品加入购物车
@@ -118,16 +110,16 @@ server.get("/addcart",(req,res)=>{
      var price=req.query.price;
      var lname=req.query.lname;
   //3.查询指定用户是否购买过此商品
-     var sql="SELECT id FROM xz_cart WHERE uid=? AND lid=?";
+     var sql="SELECT id FROM pk_cart WHERE uid=? AND lid=?";
      pool.query(sql,[uid,lid],(err,result)=>{
         if(err)throw err;      
         //4.没有购买过就添加
         var sql="";
         if(result.length==0){
-           sql=`INSERT INTO xz_cart VALUES(null,${lid},${uid},1,'${lname}',${price},'01.jpg')`;
+           sql=`INSERT INTO pk_cart VALUES(null,${lid},${uid},1,'${lname}',${price},'02.jpg')`;
         }else{
            //5.购买过此商品就更新
-           sql=`UPDATE xz_cart SET count=count+1 WHERE uid=${uid} AND lid=${lid}`;
+           sql=`UPDATE pk_cart SET count=count+1 WHERE uid=${uid} AND lid=${lid}`;
         } 
         pool.query(sql,(err,result)=>{
            if(err)throw err;
@@ -149,7 +141,7 @@ server.get("/cart",(req,res)=>{
       return;
    }
 //3.创建sql语句，查询用户购物车内容
-   var sql="SELECT id,lid,lname,price,count,img_url FROM xz_cart WHERE uid=?";
+   var sql="SELECT id,lid,lname,price,count,img_url FROM pk_cart WHERE uid=?";
    pool.query(sql,[uid],(err,result)=>{
       if(err)throw err;
       res.send({code:1,data:result});   
@@ -165,7 +157,7 @@ server.get("/delItem",(req,res)=>{
    //2.获取id，并且判断如果没有请求登录
    var id=req.query.id;
 //3.创建sql语句，查询用户购物车内容
-   var sql="DELETE FROM xz_cart WHERE id=?";
+   var sql="DELETE FROM pk_cart WHERE id=?";
    pool.query(sql,[id],(err,result)=>{
       if(err)throw err;
       //console.log(result);
@@ -187,7 +179,7 @@ server.get("/delM",(req,res)=>{
    //(1)参数
    var ids=req.query.ids;
    //(2)sql 删除多个购物车
-   var sql=`DELETE FROM xz_cart WHERE id IN (${ids})`;
+   var sql=`DELETE FROM pk_cart WHERE id IN (${ids})`;
    pool.query(sql,(err,result)=>{
       if(err)throw err;
       if(result.affectedRows>0){

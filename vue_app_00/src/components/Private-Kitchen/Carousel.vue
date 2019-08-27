@@ -48,27 +48,27 @@ export default {
     border-radius: 5px;
 }
 .mint-swipe-items-wrap .mint-swipe-item:first-child {
-    background-image: url('../../img/carousel/Rotary-Planting-Map-1.jpg');
+    background-image: url('../../assets/carousel/Rotary-Planting-Map-1.jpg');
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(2){
-    background-image: url('../../img/carousel/Rotary-Planting-Map-2.jpg'); 
+    background-image: url('../../assets/carousel/Rotary-Planting-Map-2.jpg'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(3){
-    background-image: url('../../img/carousel/Rotary-Planting-Map-3.jpg'); 
+    background-image: url('../../assets/carousel/Rotary-Planting-Map-3.jpg'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(4){
-    background-image: url('../../img/carousel/Rotary-Planting-Map-4.jpg'); 
+    background-image: url('../../assets/carousel/Rotary-Planting-Map-4.jpg'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(5){
-    background-image: url('../../img/carousel/Rotary-Planting-Map-5.jpg'); 
+    background-image: url('../../assets/carousel/Rotary-Planting-Map-5.jpg'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(6){
-    background-image: url('../../img/carousel/Rotary-Planting-Map-6.jpg'); 
+    background-image: url('../../assets/carousel/Rotary-Planting-Map-6.jpg'); 
 }
 /* .mint-swipe-items-wrap .mint-swipe-item:nth-child(7){
-    background-image: url('../../img/carousel/Rotary-Planting-Map-5.jpg'); 
+    background-image: url('../../assets/carousel/Rotary-Planting-Map-5.jpg'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(8){
-    background-image: url('../../img/carousel/Rotary-Planting-Map-5.jpg'); 
+    background-image: url('../../assets/carousel/Rotary-Planting-Map-5.jpg'); 
 } */
 </style>

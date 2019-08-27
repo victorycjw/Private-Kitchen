@@ -3,7 +3,7 @@
         <div class="mar_4">
             <div class="queue">
                 <a href="javacript:;" @click="Menu">
-                    <img src="../../img/button/Menu.svg" alt="">
+                    <img src="../../assets/button/Menu.svg" alt="">
                 </a>
             </div>
             <div class="queue">菜谱分类</div>
@@ -11,7 +11,7 @@
         <div class="mar_2">
             <div class="queue">
                 <a href="javacript:;" @click="Meals">
-                    <img src="../../img/button/Meals.svg" alt="">
+                    <img src="../../assets/button/Meals.svg" alt="">
                 </a>
             </div>
             <div class="queue">三餐</div>
@@ -19,7 +19,7 @@
         <div class="mar_4">
             <div class="queue">
                 <a href="javacript:;" @click="Cart">
-                    <img src="../../img/button/Cart.svg" alt="">
+                    <img src="../../assets/button/Cart.svg" alt="">
                 </a>
             </div>
             <div class="queue">菜谱商城</div>
@@ -27,7 +27,7 @@
         <div class="mar_3">
             <div class="queue">
                 <a href="javacript:;" @click="HomeDishes">
-                    <img src="../../img/button/HomeDishes.svg" alt="">
+                    <img src="../../assets/button/HomeDishes.svg" alt="">
                 </a>
             </div>
             <div class="queue">家常菜</div>
@@ -35,7 +35,7 @@
         <div class="mar_2">
             <div class="queue">
                 <a href="javacript:;" @click="Cure">
-                    <img src="../../img/button/Cure.svg" alt="">
+                    <img src="../../assets/button/Cure.svg" alt="">
                 </a>
             </div>
             <div class="queue">烘焙</div>
@@ -43,7 +43,7 @@
         <div class="mar_2">
             <div class="queue">
                 <a href="javacript:;" @click="Crown">
-                    <img src="../../img/button/Crown.svg" alt="">
+                    <img src="../../assets/button/Crown.svg" alt="">
                 </a>
             </div>
             <div class="queue">佳作</div>

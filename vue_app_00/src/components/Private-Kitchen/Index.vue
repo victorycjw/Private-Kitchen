@@ -31,22 +31,22 @@
         <!-- 底部导航栏 -->
         <mt-tabbar v-model="active" fixed>
             <mt-tab-item id="v" @click.native="change(0)">
-               <bottombar :selImg="require('../../img/f3.svg')" :noImg="require('../../img/f.svg')" :focused="currentIndex[0].isSelect"></bottombar>  
+               <bottombar :selImg="require('../../assets/f3.svg')" :noImg="require('../../assets/f.svg')" :focused="currentIndex[0].isSelect"></bottombar>  
                 首页
             </mt-tab-item >
             <mt-tab-item id="menu" @click.native="change(1)">
-                 <bottombar :selImg="require('../../img/f3.svg')" :noImg="require('../../img/f.svg')" :focused="currentIndex[1].isSelect" ></bottombar>
+                 <bottombar :selImg="require('../../assets/f3.svg')" :noImg="require('../../assets/f.svg')" :focused="currentIndex[1].isSelect" ></bottombar>
                  菜谱
             </mt-tab-item>
             <mt-tab-item id="add" @click.native="change(2)">
-                 <bottombar :selImg="require('../../img/+.svg')" :noImg="require('../../img/+.svg')" :focused="currentIndex[2].isSelect" ></bottombar>
+                 <bottombar :selImg="require('../../assets/+.svg')" :noImg="require('../../assets/+.svg')" :focused="currentIndex[2].isSelect" ></bottombar>
             </mt-tab-item>
             <mt-tab-item id="cart" @click.native="change(3)">
-                 <bottombar :selImg="require('../../img/g2.svg')" :noImg="require('../../img/g.svg')" :focused="currentIndex[3].isSelect"></bottombar>
+                 <bottombar :selImg="require('../../assets/g2.svg')" :noImg="require('../../assets/g.svg')" :focused="currentIndex[3].isSelect"></bottombar>
                  购物车
             </mt-tab-item>
               <mt-tab-item id="me" @click.native="change(4)">
-                 <bottombar :selImg="require('../../img/m2.svg')" :noImg="require('../../img/w.svg')" :focused="currentIndex[4].isSelect"></bottombar>
+                 <bottombar :selImg="require('../../assets/m2.svg')" :noImg="require('../../assets/w.svg')" :focused="currentIndex[4].isSelect"></bottombar>
                  我的
             </mt-tab-item>
         </mt-tabbar>

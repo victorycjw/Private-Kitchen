@@ -2,7 +2,7 @@
     <div class="container">
         <div class="left">
             <div class="img">
-                <img src="../../img/dishes/anranxiaohunfan.jpg" alt="">
+                <img src="../../assets/dishes/anranxiaohunfan.jpg" alt="">
             </div>
             <div>
                 黯然销魂饭
@@ -15,7 +15,7 @@
         
         <div class="right">
             <div class="img">
-                <img src="../../img/dishes/anranxiaohunfan.jpg" alt="">
+                <img src="../../assets/dishes/anranxiaohunfan.jpg" alt="">
             </div>
             <div>
                 黯然销魂饭
