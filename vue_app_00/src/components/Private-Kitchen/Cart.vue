@@ -10,7 +10,7 @@
             <div class="cart-item" v-for="(item,i) of list" :key="i">
                 <div class="leftImgText">
                     <input class="cb" type="checkbox" v-model="item.cb">
-                    <img :src="'http://127.0.0.1:3000/'+item.img_url">
+                    <img :src="'http://127.0.0.1:3000/'+item.imgurl">
                     <div class="lname">{{item.lname}}</div>
                     <div class="price">                    
                         ￥{{item.price}}                   
@@ -138,6 +138,7 @@ export default {
                 }else{
                     //4.获取数据成功
                     var list=res.data.data;
+                    console.log(list);
                     //4.1创建循环遍历数组并且为每个元素添加cb属性，表示商品前复选框状态
                     //注意：先添加cb属性再赋值list
                     //加载之前先清空

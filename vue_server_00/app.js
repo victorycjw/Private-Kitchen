@@ -27,8 +27,8 @@ const session = require("express-session");
    saveUninitialized:true
  }))
  //2.9:指定静态目录
- server.use(express.static("public"))
-
+server.use(express.static("public"))
+//http://127.0.0.1:3000/01.jpg
  server.listen(3000);
 
 
@@ -55,7 +55,7 @@ server.get("/login",(req,res)=>{
         //1.登录成功凭据保存session
         //result=[{id:1}]
          req.session.uid=result[0].id;
-         console.log(req.session);
+         // console.log(req.session);
         //2.将成功消息发送脚手架
          
          res.send({code:1,msg:"登录成功"})    
@@ -65,7 +65,7 @@ server.get("/login",(req,res)=>{
 
 
 
-//功能二：分页查询商品列表（拿学子商城数据库做实验）
+//功能二：分页查询商品列表
 //1.接收请求方式GET  请求地址 /product
 server.get("/product",(req,res)=>{
   //2.接收客户端两个参数   pno 页码     pageSize 页大小
@@ -95,7 +95,7 @@ server.get("/product",(req,res)=>{
 //功能三：将指定的商品加入购物车
 //#此功能的先行条件是先登录
 //1.GET   /addcart 
-server.get("/addcart",(req,res)=>{
+server.get("/addCart",(req,res)=>{
   //2.参数
      //获取当前登录用户的id值
      var uid=req.session.uid;
@@ -109,14 +109,18 @@ server.get("/addcart",(req,res)=>{
      var lid=req.query.lid;
      var price=req.query.price;
      var lname=req.query.lname;
-  //3.查询指定用户是否购买过此商品
+
+     var img_url=req.query.img_url;
+     console.log(img_url);
+     //3.查询指定用户是否购买过此商品
      var sql="SELECT id FROM pk_cart WHERE uid=? AND lid=?";
      pool.query(sql,[uid,lid],(err,result)=>{
+        console.log(result.dataset.img_url);
         if(err)throw err;      
         //4.没有购买过就添加
         var sql="";
         if(result.length==0){
-           sql=`INSERT INTO pk_cart VALUES(null,${lid},${uid},1,'${lname}',${price},'02.jpg')`;
+           sql=`INSERT INTO pk_cart VALUES(null,${lid},${uid},1,'${lname}',${price},'${img_url}')`;
         }else{
            //5.购买过此商品就更新
            sql=`UPDATE pk_cart SET count=count+1 WHERE uid=${uid} AND lid=${lid}`;
@@ -133,14 +137,14 @@ server.get("/addcart",(req,res)=>{
 
 //功能四：购物车
 //1.请求方式get
-server.get("/cart",(req,res)=>{   
+server.get("/cart",(req,res)=>{
    //2.获取uid，并且判断如果没有请求登录
    var uid=req.session.uid;
    if(!uid){
       res.send({code:-1,msg:"请先登录"});
       return;
    }
-//3.创建sql语句，查询用户购物车内容
+   //3.创建sql语句，查询用户购物车内容
    var sql="SELECT id,lid,lname,price,count,img_url FROM pk_cart WHERE uid=?";
    pool.query(sql,[uid],(err,result)=>{
       if(err)throw err;

@@ -39,21 +39,22 @@
                 var obj={pno:this.pno};
                 this.axios.get(url,{params:obj}).then(res=>{                           
                 //2.获取服务器返回结果
-                console.log(res.data.data);
+                // console.log(res.data.data);
                 //3.将返回结果保存
                 //4.拼接多页内容
                 var rows=this.list.concat(res.data.data);            
                 //5.将结果复制给list
                 this.list=rows;
-                console.log(this.list);
+                // console.log(this.list);
                 })
             },
             addCart(e){
                 var lid=e.target.dataset.lid;
                 var lname=e.target.dataset.lname;
                 var price=e.target.dataset.price;
+                var img_url=e.target.dataset.img_url;
                 var url="addCart";
-                var obj={lid:lid,lname:lname,price:price};
+                var obj={lid:lid,lname:lname,price:price,img_url:img_url};
                 this.axios.get(url,{params:obj}).then
                     (res=>{
                     if(res.data.code==-1){
