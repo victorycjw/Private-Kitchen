@@ -1,53 +1,45 @@
 <template>
-    <div class="button">
-        <div class="mar_4">
-            <div class="queue">
-                <a href="javacript:;" @click="Menu">
-                    <img src="../../assets/button/Menu.svg" alt="">
-                </a>
-            </div>
-            <div class="queue">菜谱分类</div>
-        </div>
-        <div class="mar_2">
-            <div class="queue">
-                <a href="javacript:;" @click="Meals">
-                    <img src="../../assets/button/Meals.svg" alt="">
-                </a>
-            </div>
-            <div class="queue">三餐</div>
-        </div>
-        <div class="mar_4">
-            <div class="queue">
-                <a href="javacript:;" @click="Cart">
-                    <img src="../../assets/button/Cart.svg" alt="">
-                </a>
-            </div>
-            <div class="queue">菜谱商城</div>
-        </div>
-        <div class="mar_3">
-            <div class="queue">
-                <a href="javacript:;" @click="HomeDishes">
-                    <img src="../../assets/button/HomeDishes.svg" alt="">
-                </a>
-            </div>
-            <div class="queue">家常菜</div>
-        </div>
-        <div class="mar_2">
-            <div class="queue">
-                <a href="javacript:;" @click="Cure">
-                    <img src="../../assets/button/Cure.svg" alt="">
-                </a>
-            </div>
-            <div class="queue">烘焙</div>
-        </div>
-        <div class="mar_2">
-            <div class="queue">
-                <a href="javacript:;" @click="Crown">
-                    <img src="../../assets/button/Crown.svg" alt="">
-                </a>
-            </div>
-            <div class="queue">佳作</div>
-        </div>
+    <!-- 自定义宫格：mygrid-->
+    <div class="mygrid">
+        <!-- 调用vant组件：van-swipe -->
+        <van-swipe>
+            <van-swipe-item>
+                <!-- 调用vant组件：van-grid -->
+                <!-- column-num：列数 -->
+                <van-grid :column-num="3">
+                    <van-grid-item
+                        :icon="require('../../assets/button/Menu.svg')"
+                        text="菜谱分类"
+                        @click="Menu"
+                    />
+                    <van-grid-item
+                        :icon="require('../../assets/button/Meals.svg')"
+                        text="三餐"
+                        @click="Meals"
+                    />
+                    <van-grid-item
+                        :icon="require('../../assets/button/CartShop.svg')"
+                        text="菜谱商城"
+                        @click="CartShop"
+                    />
+                    <van-grid-item
+                        :icon="require('../../assets/button/HomeDishes.svg')"
+                        text="家常菜"
+                        @click="HomeDishes"
+                    />
+                    <van-grid-item
+                        :icon="require('../../assets/button/Bakery.svg')"
+                        text="烘焙"
+                        @click="Cure"
+                    />
+                    <van-grid-item
+                        :icon="require('../../assets/button/Crown.svg')"
+                        text="佳作"
+                        @click="Crown"
+                    />
+                </van-grid>         
+            </van-swipe-item>
+        </van-swipe>
     </div>
 </template>
 <script>
@@ -59,14 +51,14 @@
             Meals(){
                 this.$router.push("/Meals")
             },
-            Cart(){
+            CartShop(){
                 this.$router.push("/CartShop")
             },
             HomeDishes(){
                 this.$router.push("/HomeDishes")
             },
             Cure(){
-                this.$router.push("/Cure")
+                this.$router.push("/Bakery")
             },
             Crown(){
                 this.$router.push("/Crown")
@@ -75,25 +67,8 @@
     }
 </script>
 <style>
-    .button{
+    .mygrid{
         width: 100%;
         height: 120px;
-        margin-top: 10px;
-    }
-    .queue{
-        display: flex;
-        justify-content: space-around;
-    }
-    .mar_2{
-        float: left;
-        margin: 0 46px;
-    }
-    .mar_3{
-        float: left;
-        margin: 0 38px;
-    }
-    .mar_4{
-        float: left;
-        margin: 0 30px;
     }
 </style>

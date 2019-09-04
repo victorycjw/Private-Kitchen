@@ -1,13 +1,12 @@
 <template>
     <div>
-        <menutop></menutop>
-        <!-- <menumiddle></menumiddle> -->
+        <titlebarother></titlebarother>
     </div>
 </template>
 
 <script>
     // 头部搜索
-    import menutop from './Search.vue'
+    import titlebarother from "./Titlebarother.vue"
     // 
     export default {
         data(){
@@ -16,8 +15,7 @@
             };
         },
         components:{
-            "menutop":menutop,
-            // "menumiddle":menumiddle
+            "titlebarother":titlebarother,
         }
     }
 </script>

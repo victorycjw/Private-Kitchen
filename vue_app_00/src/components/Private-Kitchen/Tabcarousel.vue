@@ -16,10 +16,6 @@
             <!-- 厨房技巧 -->
             <skill></skill>
         </van-tab>
-        <van-tab :title="'烘焙'">
-            <!-- 烘焙 -->
-            <bakery></bakery>
-        </van-tab>
         <van-tab :title="'美食圈'">
             <!-- 美食圈 -->
             <foodcity></foodcity>
@@ -31,7 +27,6 @@ import recommend from "./Recommend.vue"
 import attention from "./Attention.vue"
 import community from "./Community.vue"
 import skill from "./Skill.vue"
-import bakery from "./Bakery.vue"
 import foodcity from "./Foodcity.vue"
     export default {
         data(){
@@ -42,11 +37,10 @@ import foodcity from "./Foodcity.vue"
             "attention":attention,
             "community":community,
             "skill":skill,
-            "bakery":bakery,
             "foodcity":foodcity,
         },
 }
 </script>
 <style scoped>
-
+    
 </style>

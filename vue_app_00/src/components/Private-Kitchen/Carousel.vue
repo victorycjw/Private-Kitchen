@@ -7,8 +7,8 @@
             <mt-swipe-item></mt-swipe-item>
             <mt-swipe-item></mt-swipe-item>
             <mt-swipe-item></mt-swipe-item>
-            <!-- <mt-swipe-item></mt-swipe-item>
-            <mt-swipe-item></mt-swipe-item> -->
+            <mt-swipe-item></mt-swipe-item>
+            <mt-swipe-item></mt-swipe-item>
         </mt-swipe>
     </div>
 </template>
@@ -39,36 +39,36 @@ export default {
 }
 .mint-swipe {
     position: relative;
-    height: 140px;
-    margin-top: 60px;
+    height: 200px;
+    /* margin-top: 60px; */
 }
 .mint-swipe-items-wrap .mint-swipe-item{
     background-repeat:no-repeat;
-    background-size:100% 140px;  
+    background-size:100% 200px;  
     border-radius: 5px;
 }
 .mint-swipe-items-wrap .mint-swipe-item:first-child {
-    background-image: url('../../assets/carousel/Rotary-Planting-Map-1.jpg');
+    background-image: url('../../assets/carousel/1.png');
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(2){
-    background-image: url('../../assets/carousel/Rotary-Planting-Map-2.jpg'); 
+    background-image: url('../../assets/carousel/2.png'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(3){
-    background-image: url('../../assets/carousel/Rotary-Planting-Map-3.jpg'); 
+    background-image: url('../../assets/carousel/3.png'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(4){
-    background-image: url('../../assets/carousel/Rotary-Planting-Map-4.jpg'); 
+    background-image: url('../../assets/carousel/4.png'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(5){
-    background-image: url('../../assets/carousel/Rotary-Planting-Map-5.jpg'); 
+    background-image: url('../../assets/carousel/5.png'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(6){
-    background-image: url('../../assets/carousel/Rotary-Planting-Map-6.jpg'); 
+    background-image: url('../../assets/carousel/6.png'); 
 }
-/* .mint-swipe-items-wrap .mint-swipe-item:nth-child(7){
-    background-image: url('../../assets/carousel/Rotary-Planting-Map-5.jpg'); 
+.mint-swipe-items-wrap .mint-swipe-item:nth-child(7){
+    background-image: url('../../assets/carousel/7.png'); 
 }
 .mint-swipe-items-wrap .mint-swipe-item:nth-child(8){
-    background-image: url('../../assets/carousel/Rotary-Planting-Map-5.jpg'); 
-} */
+    background-image: url('../../assets/carousel/8.png'); 
+}
 </style>

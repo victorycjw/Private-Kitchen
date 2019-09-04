@@ -1,8 +1,9 @@
 <template>
     <div class="container">
-        <div class="left">
+        <div class="opus" v-for="(item,i) of list" :key="i">
+        <!-- <a href="./CartShop.vue" class="opus"> -->
             <div class="img">
-                <img src="../../assets/dishes/anranxiaohunfan.jpg" alt="">
+                <img src="../../assets/dishes/anranxiaohunfan.png" alt="">
             </div>
             <div>
                 黯然销魂饭
@@ -13,9 +14,22 @@
             </div>
         </div>
         
-        <div class="right">
+        <div class="opus">
             <div class="img">
-                <img src="../../assets/dishes/anranxiaohunfan.jpg" alt="">
+                <img src="../../assets/dishes/anranxiaohunfan.png" alt="">
+            </div>
+            <div>
+                黯然销魂饭
+            </div>
+            <div>
+                <span>id:</span>
+                <span style="float:right">2195</span>
+            </div>
+        </div>
+
+        <div class="opus">
+            <div class="img">
+                <img src="../../assets/dishes/anranxiaohunfan.png" alt="">
             </div>
             <div>
                 黯然销魂饭
@@ -27,21 +41,27 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    data(){
+        return{
+            list:[],  //图片列表数组
+            pno:0     //页码（第几页）
+        }
+    },
+}
+</script>
 <style scoped>
     .container{
-        /* position: relative; */
-    }
-    .left{
         display: flex;
-        margin: 10px;
-        width: 160px;
+        flex-wrap:wrap;
+        justify-content:space-around;
         height: 1000px;
     }
-    .right{
-        display: flex;
-        margin: 10px;
+    .opus{
+        margin-top: 20px;
         width: 160px;
-        height: 1000px;
+        height: 220px;
     }
     .img{
         overflow: hidden;

@@ -1,31 +1,32 @@
 <template>
     <div class="cart">
+        <titlebarother></titlebarother>
         <div class="list">
             <table></table>
         </div>
-        <div >
+        <div>
             <!-- Cart.vue组件 -->
             <!-- <h1>Cart.vue</h1> -->            
             <!-- 购物车商品信息 -->
             <div class="cart-item" v-for="(item,i) of list" :key="i">
                 <div class="leftImgText">
                     <input class="cb" type="checkbox" v-model="item.cb">
-                    <img :src="'http://127.0.0.1:3000/'+item.imgurl">
+                    <img :src="item.img_url">
                     <div class="lname">{{item.lname}}</div>
                     <div class="price">                    
                         ￥{{item.price}}                   
                     </div>
                 </div>
-                <mt-button size="small">-</mt-button>
-                <span>1</span>
-                <mt-button size="small">+</mt-button>
-                <!-- <mt-button class="debtn" :data-id="item.id" @click="delItem">删除</mt-button> -->
+                <mt-button class="btn" size="small" @click.native="reCount" :data-count="item.count"  :data-id="item.id">-</mt-button>
+                <span>{{item.count}}</span>
+                <mt-button class="btn" size="small" @click.native="addCount" :data-count="item.count"  :data-id="item.id">+</mt-button>
+                <mt-button class="debtn" :data-id="item.id" @click="delItem">删除</mt-button>
             </div>
             <div>
             <!-- 按钮删除选中商品 -->
                 购物车商品的数量
                 <span>{{$store.getters.getCartCount}}</span>
-                <mt-button  class="debtn" @click="delMitem">删除选中商品</mt-button>
+                <mt-button  class="debtnall" @click="delMitem">删除选中商品</mt-button>
             <!-- 合计 -->
             </div>
             <div class="selectAll">
@@ -41,13 +42,56 @@
     </div>
 </template>
 <script>
+import titlebarother from "./Titlebarother.vue"
 export default {
     data(){
         return{
             list:[]
         }
     },
+    components:{
+        "titlebarother":titlebarother
+    },
     methods:{
+         reCount(e){
+            var count=e.target.dataset.count;
+            var id=e.target.dataset.id;
+            console.log(id);
+            if(count>1){
+                var url="reCount";
+                var obj={id:id,count:count};
+                this.axios.get(url,{params:obj}).then(result=>{
+                    console.log(result);
+                })
+                this.loadMore();//加载最新内容
+            }else{
+                this.$messagebox.confirm("是否删除指定商品").then(action=>{
+                    var url="delItem";
+                    var obj={id:id,count:count};
+                    //发送ajax请求
+                    this.axios.get(url,{params:obj}).then(result=>{
+                        console.log(result);
+                        //如果服务器删除成功，会返回1
+                        if(result.data.code>0){
+                            this.loadMore();//加载最新内容
+                        }
+                    })
+                }).catch(err=>{
+                    return;
+                })
+            }
+        },
+        addCount(e){
+            var count=e.target.dataset.count;
+            var id=e.target.dataset.id;
+            console.log(id);
+            var url="addCount";
+                var obj={id:id,count:count};
+                this.axios.get(url,{params:obj}).then(result=>{
+                    console.log(result);
+                })
+                this.loadMore();//加载最新内容
+        },
         selectAll(e){
             //全选按钮的处理函数
             //1.获取全选按钮状态
@@ -75,8 +119,6 @@ export default {
                 this.$messagebox("请选择要删除的商品");
                 return;//停止执行
             }
-            
-            //2.3:
             // 3.截取字符串中最后一个逗号，
             // 截取字符串 0：开始下标 str.lengt-1 保留几个字符
             var str=str.substring(0,str.length-1);
@@ -203,6 +245,14 @@ export default {
 }
 /* 删除按钮 */
 .debtn{
+    width:60px;
+    height:30px;
+    font-size:15px;
+    margin-right:5px;
+    background:#F27151;
+    color:#fff;
+}
+.debtnall{
     width:150px;
     height:30px;
     font-size:15px;

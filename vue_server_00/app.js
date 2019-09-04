@@ -64,7 +64,6 @@ server.get("/login",(req,res)=>{
  });
 
 
-
 //功能二：分页查询商品列表
 //1.接收请求方式GET  请求地址 /product
 server.get("/product",(req,res)=>{
@@ -109,13 +108,10 @@ server.get("/addCart",(req,res)=>{
      var lid=req.query.lid;
      var price=req.query.price;
      var lname=req.query.lname;
-
      var img_url=req.query.img_url;
-     console.log(img_url);
      //3.查询指定用户是否购买过此商品
      var sql="SELECT id FROM pk_cart WHERE uid=? AND lid=?";
      pool.query(sql,[uid,lid],(err,result)=>{
-        console.log(result.dataset.img_url);
         if(err)throw err;      
         //4.没有购买过就添加
         var sql="";
@@ -132,7 +128,6 @@ server.get("/addCart",(req,res)=>{
      //6.json     
      })
   })
-
 
 
 //功能四：购物车
@@ -152,7 +147,6 @@ server.get("/cart",(req,res)=>{
    })
 //4.获取返回结果并且发送客户端
 })
-
 
 
 //功能五：删除购物车中指定一个商品
@@ -192,4 +186,40 @@ server.get("/delM",(req,res)=>{
          res.send({code:-1,msg:"删除失败"});
       }
    })
+})
+
+
+//功能七：购物车点击“-”，减少数据库中的count数量
+//1.请求方式get
+server.get("/reCount",(req,res)=>{   
+   //2.获取id，并且判断如果没有请求登录
+   var id=req.query.id;
+   var count=req.query.count;
+   count--;
+//3.创建sql语句，查询用户购物车内容
+   var sql="UPDATE pk_cart SET count=? WHERE id=?";
+   pool.query(sql,[count,id],(err,result)=>{
+      if(err)throw err;
+      // console.log(result);
+      res.send({code:1,msg:"更新成功"}); 
+   })
+//4.获取返回结果并且发送客户端
+})
+
+
+//功能八：购物车点击“+”，增加数据库中的count数量
+//1.请求方式get
+server.get("/addCount",(req,res)=>{   
+   //2.获取id，并且判断如果没有请求登录
+   var id=req.query.id;
+   var count=req.query.count;
+   count++;
+//3.创建sql语句，查询用户购物车内容
+   var sql="UPDATE pk_cart SET count=? WHERE id=?";
+   pool.query(sql,[count,id],(err,result)=>{
+      if(err)throw err;
+      // console.log(result);
+      res.send({code:1,msg:"更新成功"});
+   })
+//4.获取返回结果并且发送客户端
 })

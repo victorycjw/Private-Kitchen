@@ -72,9 +72,10 @@ CREATE TABLE pk_cart(
 );
 
 -- 菜
-CREATE TABLE cai(
+CREATE TABLE pk_cai(
     cid INT PRIMARY KEY AUTO_INCREMENT,
     cname VARCHAR(32),
+    author VARCHAR(32),
     proDraw VARCHAR(128),
     video VARCHAR(128),
     stepPic_1 VARCHAR(128),

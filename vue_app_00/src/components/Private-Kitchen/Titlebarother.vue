@@ -8,11 +8,9 @@
             v-model="value" 
             placeholder="请输入搜索关键词" 
             show-action 
-            shape="round" 
+            shape="round"
             @click="search">
-            <div slot="action" @click="cart">
-                <img src="../../assets/cart.png" alt="" style="margin-top:10px">
-            </div>
+            <div slot="action" @click="onBack">返回</div>
         </van-search>
     </div>
 </template>
@@ -29,8 +27,8 @@ export default {
         search(){
             this.$router.push("/Search");
         },
-        cart(){
-            this.$router.push("/Cart");
+        onBack(){
+            this.$router.push("/Index");
         },
     },
 }
