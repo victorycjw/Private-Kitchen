@@ -1,8 +1,13 @@
 <template>
     <div class="product-app">
+        <pullrefresh></pullrefresh>
+        <div class="titlebar">
+            <van-nav-bar title="菜谱商城" left-text="返回" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+                <van-icon name="search" slot="right" />
+            </van-nav-bar>
+        </div>
         <!-- Product.vue -->
         <!-- 一个商品 循环 -->
-        <titlebarother></titlebarother>
         <div class="goods-item" v-for="(item,i) of list" :key="i">
             <img :src="'http://127.0.0.1:3000/'+item.img_url">
             <div class="detail">{{item.lname}}</div>
@@ -16,7 +21,8 @@
     </div>
 </template>
 <script>
-import titlebarother from "./Titlebarother.vue"
+// 下拉刷新
+import pullrefresh from "./PullRefresh.vue"
 export default {
     data(){
         return{
@@ -25,13 +31,19 @@ export default {
         }
     },
     components:{
-        "titlebarother":titlebarother
+        "pullrefresh":pullrefresh
     },
     created(){
         this.loadMore();
         // console.log("1.created组件创建成功");
     },
     methods:{
+        onClickLeft() {
+            this.$router.push("/Index");
+        },
+        onClickRight() {
+            this.$router.push("/Search");
+        },
         jumpCart(){
             //查看购物车，跳转到购物车的组件
             this.$router.push("/Cart");
@@ -78,6 +90,10 @@ export default {
 }
 </script>
 <style scoped>
+    .titlebar{
+        width: 100%;
+        height: 50px;
+    }
     .product-app{
         display:flex;/*指定当前元素弹性布局*/
         flex-wrap:wrap;/*指定子元素换行*/

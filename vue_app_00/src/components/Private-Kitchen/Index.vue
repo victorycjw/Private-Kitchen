@@ -18,8 +18,9 @@
             <mt-tab-container-item id="menu">
                 <Menu></Menu>
             </mt-tab-container-item>
-            <!--分类 -->
+            <!-- + -->
             <mt-tab-container-item id="add">
+                <plus></plus>
             </mt-tab-container-item>
             <!-- 购物车 -->
             <mt-tab-container-item id="cart">
@@ -37,19 +38,19 @@
                 首页
             </mt-tab-item >
             <mt-tab-item id="menu" @click.native="change(1)">
-                 <bottombar :selImg="require('../../assets/tab/menu_active.png')" :noImg="require('../../assets/tab/menu.png')" :focused="currentIndex[1].isSelect" ></bottombar>
-                 菜谱
+                <bottombar :selImg="require('../../assets/tab/menu_active.png')" :noImg="require('../../assets/tab/menu.png')" :focused="currentIndex[1].isSelect" ></bottombar>
+                菜谱
             </mt-tab-item>
             <mt-tab-item id="add" @click.native="change(2)">
-                 <bottombar :selImg="require('../../assets/tab/+_active.png')" :noImg="require('../../assets/tab/+.png')" :focused="currentIndex[2].isSelect" ></bottombar>
+                <bottombar :selImg="require('../../assets/tab/+_active.png')" :noImg="require('../../assets/tab/+.png')" :focused="currentIndex[2].isSelect" ></bottombar>
             </mt-tab-item>
             <mt-tab-item id="cart" @click.native="change(3)">
-                 <bottombar :selImg="require('../../assets/tab/cart_active.png')" :noImg="require('../../assets/tab/cart.png')" :focused="currentIndex[3].isSelect"></bottombar>
-                 购物车
+                <bottombar :selImg="require('../../assets/tab/cart_active.png')" :noImg="require('../../assets/tab/cart.png')" :focused="currentIndex[3].isSelect"></bottombar>
+                购物车
             </mt-tab-item>
               <mt-tab-item id="me" @click.native="change(4)">
-                 <bottombar :selImg="require('../../assets/tab/me_active.png')" :noImg="require('../../assets/tab/me.png')" :focused="currentIndex[4].isSelect"></bottombar>
-                 我的
+                <bottombar :selImg="require('../../assets/tab/me_active.png')" :noImg="require('../../assets/tab/me.png')" :focused="currentIndex[4].isSelect"></bottombar>
+                我的
             </mt-tab-item>
         </mt-tabbar>
     </div>
@@ -67,10 +68,12 @@ import tabcarousel from "./Tabcarousel.vue"
 import bottombar from "./Bottombar.vue";
     // 菜谱
     import Menu from "./Menu.vue";
+    // +plus
+    import plus from "./+.vue";
     // 购物车
     import cart from "./Cart.vue";
     // 我的
-    import me from "./me.vue"
+    import me from "./Me.vue"
 
 // 登陆页面
 // import login from "./Login.vue";
@@ -95,6 +98,7 @@ export default {
         "Button":Button,
         "bottombar":bottombar,
         "Menu":Menu,
+        "plus":plus,
         "cart":cart,
         "me":me,
     },

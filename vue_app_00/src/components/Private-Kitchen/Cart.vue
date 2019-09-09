@@ -1,6 +1,12 @@
 <template>
     <div class="cart">
-        <titlebarother></titlebarother>
+        <!-- 下拉刷新 -->
+        <!-- <pullrefresh></pullrefresh> -->
+        <div class="titlebar">
+            <van-nav-bar title="购物车" left-text="返回" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+                <van-icon name="search" slot="right" />
+            </van-nav-bar>
+        </div>
         <div class="list">
             <table></table>
         </div>
@@ -36,13 +42,27 @@
                     <span>合计:<span class="price">￥</span></span>
                     <mt-button class="sumbtn">结算</mt-button>
                 </span>
-
             </div>
+
+            <!-- <div>
+                vant组件结算
+                <van-submit-bar
+                    :price="3050"
+                    button-text="结算"
+                    @submit="onSubmit"
+                    >
+                    <van-checkbox v-model="checked">全选</van-checkbox>
+                    <span slot="tip">
+                        你的收货地址不支持同城送, <span>修改地址</span>
+                    </span>
+                </van-submit-bar>
+            </div> -->
         </div>
     </div>
 </template>
 <script>
-import titlebarother from "./Titlebarother.vue"
+// 下拉刷新
+// import pullrefresh from "./PullRefresh.vue"
 export default {
     data(){
         return{
@@ -50,10 +70,16 @@ export default {
         }
     },
     components:{
-        "titlebarother":titlebarother
+        // "pullrefresh":pullrefresh
     },
     methods:{
-         reCount(e){
+        onClickLeft() {
+            this.$router.push("/Index");
+        },
+        onClickRight() {
+            this.$router.push("/Search");
+        },
+        reCount(e){
             var count=e.target.dataset.count;
             var id=e.target.dataset.id;
             console.log(id);
@@ -203,6 +229,10 @@ export default {
 }
 </script>
 <style scoped>
+.titlebar{
+    width: 100%;
+    height: 50px;
+}
 /* 1.商品项目元素 */
 .list{
     width:100%;

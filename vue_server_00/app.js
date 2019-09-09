@@ -10,7 +10,7 @@ const session = require("express-session");
    user:"root",
    password:"",
    port:3306,
-   database:"P_Kitchen",
+   database:"p_kitchen",
    connectionLimit:15
  })
  //2.2:跨域
@@ -28,9 +28,36 @@ const session = require("express-session");
  }))
  //2.9:指定静态目录
 server.use(express.static("public"))
-//http://127.0.0.1:3000/01.jpg
+//http://127.0.0.1:3000/img/cart/01.jpg
  server.listen(3000);
 
+// 功能零：完成用户注册
+server.get("/register",(req,res)=>{
+   //1:参数:获取网页传递多个数据 uname upwd phone email avatar username gender
+   var uname = req.query.uname;
+   var upwd = req.query.upwd;
+   var phone=req.query.phone;
+   var email=req.query.email;
+   var avatar=req.query.avatar;
+   var username=req.query.username;
+   var gender=req.query.gender;
+   //2:sql:查询sql语句
+   //数据库 库名 表名 列名 小写字母
+   var sql = "INSERT INTO pk_user VALUES (null,?,md5(?),?,?,?,?,?)";
+   //3:json:{code:1,msg:"登录成功"}
+   pool.query(sql,[uname,upwd,phone,email,avatar,username,gender],(err,result)=>{
+      //执行sql语句回调函数
+      // console.log(result);
+      if(err)throw err;
+      //判断
+      if(result.affectedRows>0){
+         //注册成功
+         res.send({code:1,msg:"注册成功"});
+      }else{
+         res.send({code:-1,msg:"注册信息输入错误"});
+      }
+   })
+ });
 
  //功能一:完成用户登录操作
 server.get("/login",(req,res)=>{
@@ -41,7 +68,7 @@ server.get("/login",(req,res)=>{
    var upwd = req.query.upwd;
    //2:sql:查询sql语句
    //数据库 库名 表名 列名 小写字母
-   var sql = "SELECT id FROM pk_login";
+   var sql = "SELECT id FROM pk_user";
    sql+=" WHERE uname = ? AND upwd=md5(?)";
    //3:json:{code:1,msg:"登录成功"}
    pool.query(sql,[uname,upwd],(err,result)=>{
@@ -57,7 +84,6 @@ server.get("/login",(req,res)=>{
          req.session.uid=result[0].id;
          // console.log(req.session);
         //2.将成功消息发送脚手架
-         
          res.send({code:1,msg:"登录成功"})    
       }
    })

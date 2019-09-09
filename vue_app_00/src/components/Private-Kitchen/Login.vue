@@ -1,7 +1,11 @@
 <template>
     <div class="login_container">
       <!--pk/Login.vue-->
-      <h1>登录</h1>
+      <div class="titlebar">
+        <van-nav-bar title="登陆" left-text="返回" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+          <van-icon name="search" slot="right" />
+        </van-nav-bar>
+      </div>
       <!--用户名-->
       <mt-field :placeholder="unameHolder" v-model="uname" class="myinput" type="text"></mt-field>
       <!--密码-->
@@ -19,14 +23,21 @@
          uname:"",
          upwd:""
        }
-     },methods:{
-       login(){
-         //完成登录
-         //1:获取用户名和密码
-         var u = this.uname;
-         var p = this.upwd;
-         //2:创建一个正则表达式
-         //  字母数字下划3~12
+     },
+     methods:{
+      onClickLeft() {
+        this.$router.push("/Index");
+      },
+      onClickRight() {
+        this.$router.push("/Search");
+      },
+      login(){
+        //完成登录
+        //1:获取用户名和密码
+        var u = this.uname;
+        var p = this.upwd;
+        //2:创建一个正则表达式
+        //  字母数字下划3~12
   var reg = /^[a-z0-9_-]{3,12}$/i;
       //3:验证用户名 出错提示 53
       if(!reg.test(u)){
@@ -50,7 +61,7 @@
           //登录失败  提示
         }else{
           //登录成功  跳转商品首页
-          this.$router.push("/CartShop");
+          this.$router.push("/Me");
         }
       //  if(result.data.code > 0){
       //     this.$router.push("/");
@@ -61,15 +72,19 @@
      }
      }
    }   
-  </script>
-  <style scoped>
-   .login_container{
-    margin: 0 auto;
-    text-align: center;
-    /* background:#ddd; */
-   }
-   .mybutton{
-      background: #0aa1ed;
-      color: #fff;
-   }
-  </style>
+</script>
+<style scoped>
+.titlebar{
+  width: 100%;
+  height: 50px;
+}
+.login_container{
+  margin: 0 auto;
+  text-align: center;
+  /* background:#ddd; */
+}
+.mybutton{
+  background: #0aa1ed;
+  color: #fff;
+}
+</style>

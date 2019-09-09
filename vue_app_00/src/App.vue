@@ -45,4 +45,10 @@ div.van-tab{
 div.van-tab--active {
    color: red;
 }
+a{
+   color: black;
+   font-size: 20px;
+   font-family: "楷体";
+   text-decoration: none;
+}
 </style>

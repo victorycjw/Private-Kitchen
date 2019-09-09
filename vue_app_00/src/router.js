@@ -20,6 +20,8 @@ import Carousel from "./components/Private-Kitchen/Carousel.vue"
 import Button from "./components/Private-Kitchen/Button.vue"
   // 菜谱分类
   import Menu from "./components/Private-Kitchen/Menu.vue"
+    import Content from "./components/Private-Kitchen/Content_1.vue"
+    import Contentc from "./components/Private-Kitchen/Content_ceshi.vue"
   // 三餐
   import Meals from "./components/Private-Kitchen/Meals.vue"
   // 菜谱商城
@@ -50,8 +52,10 @@ import Titlebarother from "./components/Private-Kitchen/Titlebarother.vue"
 
 // 购物车
 import Cart from "./components/Private-Kitchen/Cart.vue"
+// 下拉刷新
+import PullRefresh from "./components/Private-Kitchen/PullRefresh.vue"
 // 我的
-import me from "./components/Private-Kitchen/me.vue"
+import Me from "./components/Private-Kitchen/Me.vue"
 import Coupon from "./components/Private-Kitchen/Coupon.vue"
 
 Vue.use(Router)
@@ -67,6 +71,8 @@ export default new Router({
     {path:'/Carousel',component:Carousel},
     {path:'/Button',component:Button},
       {path:'/Menu',component:Menu},
+        {path:'/Content',component:Content},
+        {path:'/Contentc',component:Contentc},
       {path:'/Meals',component:Meals},
       {path:'/CartShop',component:CartShop},
       {path:'/HomeDishes',component:HomeDishes},
@@ -85,8 +91,9 @@ export default new Router({
     {path:'/Titlebarother',component:Titlebarother},
 
     {path:'/Cart',component:Cart},
+    {path:'/PullRefresh',component:PullRefresh},
     
-    {path:'/me',component:me},
+    {path:'/Me',component:Me},
     {path:'/Coupon',component:Coupon},
 
   ]
