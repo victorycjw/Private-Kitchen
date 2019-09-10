@@ -6,19 +6,23 @@
         </van-tab>
         <van-tab :title="'关注'">
             <!-- 关注 -->
-            <attention></attention>
+            <!-- <attention></attention> -->
+            <recommend></recommend>
         </van-tab>
         <van-tab :title="'美食社区'">
             <!-- 美食社区 -->
-            <community></community>
+            <!-- <community></community> -->
+            <recommend></recommend>
         </van-tab>
         <van-tab :title="'厨房技巧'">
             <!-- 厨房技巧 -->
-            <skill></skill>
+            <!-- <skill></skill> -->
+            <recommend></recommend>
         </van-tab>
         <van-tab :title="'美食圈'">
             <!-- 美食圈 -->
-            <foodcity></foodcity>
+            <!-- <foodcity></foodcity> -->
+            <recommend></recommend>
         </van-tab>
     </van-tabs>
 </template>

@@ -1,12 +1,12 @@
 <template>
-    <div class="product-app">
+    <div class="cartshop-app">
         <pullrefresh></pullrefresh>
         <div class="titlebar">
             <van-nav-bar title="菜谱商城" left-text="返回" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
                 <van-icon name="search" slot="right" />
             </van-nav-bar>
         </div>
-        <!-- Product.vue -->
+        <!-- CartShop.vue -->
         <!-- 一个商品 循环 -->
         <div class="goods-item" v-for="(item,i) of list" :key="i">
             <img :src="'http://127.0.0.1:3000/'+item.img_url">
@@ -94,7 +94,7 @@ export default {
         width: 100%;
         height: 50px;
     }
-    .product-app{
+    .cartshop-app{
         display:flex;/*指定当前元素弹性布局*/
         flex-wrap:wrap;/*指定子元素换行*/
         justify-content: space-between;

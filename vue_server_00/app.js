@@ -249,3 +249,18 @@ server.get("/addCount",(req,res)=>{
    })
 //4.获取返回结果并且发送客户端
 })
+
+// 功能九：
+//1.接收请求方式GET  请求地址 /cai
+server.get("/cai",(req,res)=>{
+   //2.创建sql语句
+    var sql="SELECT cname,proDraw,username,zan FROM pk_cai";
+   //  sql+=" LIMIT ?,?";
+   //3.通过连接池发送sql语句
+    pool.query(sql,(err,result)=>{
+     if(err)throw err;  
+   //4.获取数据库返回的查询结果
+   //5.将查询结果发送客户端
+     res.send({code:1,msg:"查询成功",data:result});
+    });
+   })

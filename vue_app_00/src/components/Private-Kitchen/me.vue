@@ -17,10 +17,10 @@
             </tr>
             <tr style="text-align:center">
                 <td>
-                    <a href="#">菜谱</a>
+                    <a href="#">我的菜谱</a>
                 </td>
                 <td>
-                    <a href="#">关注</a>
+                    <a href="#">我的关注</a>
                 </td>
             </tr>
             <tr>
